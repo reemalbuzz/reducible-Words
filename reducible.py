@@ -14,6 +14,7 @@ Students. Academic penalties up to and including an F in the course are likely.
 
 UT EID 1:rea2369
 """
+import sys
 # the constant used to calculate the step size
 STEP_SIZE_CONSTANT = 3
 
@@ -148,13 +149,10 @@ def main():
     # where each line read from input()
     # should be a single word. Append to word_list
     # ensure each word has no trailing white space.
-    try:
-        while True:
-            word = input().strip()
-            if word:
-                word_list.append(word)
-    except EOFError:
-        pass
+    for line in sys.stdin:
+        word = line.strip()
+        if word:
+            word_list.append(word)
     # find length of word_list
     n = len(word_list)
     # determine prime number N that is greater than twice
